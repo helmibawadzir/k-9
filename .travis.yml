@@ -1,11 +1,17 @@
 language: android
 android:
- components:
-    - tools
-    - build-tools-25.0.2
-    - android-25
-    - extra-android-m2repository
-
+  components:
+  - tools
+  - build-tools-25.0.2
+  - android-25
+  - extra-android-m2repository
 jdk: oraclejdk8
-
-script: ./gradlew testDebug
+script: ./gradlew assembleDebug
+deploy:
+  provider: releases
+  api_key:
+    secure: qJGObGpbGU7o12Z+tAWX+5+xGkdBEEfzcx7qhlDLSGiY7M0Bl+1KL6BpoYIHg6FZRpBpg/mFEf+BNRx0TH9a/c9s4kA7YexAWthzj/AvN6Ze+u9sA01vfpHUG16Z0n0jGR8AaPO/Hjd5eeQqyAmJKzzwFYgB7Y9/RN7YiiIfMGHTNZH5JkYsYMnyrXpkSORrWRzvw8tJJRrpZkFNx1jCEiVRNhD/k+hY7K/f2r1eAjGo5Z/CBKqkVkXFYt4oP4Q1hupN83HcQXHZNYNXZX1l+BdLO4TwyGeWcMVnfBJStGnDFBPLO9OpPcVhQPD+YfEqPi9MkWaGeQZ+T1NXtlkZDdmOdg0pgkv/OqBOr+UI51PU0i5awgLA+qTdB0EO1eeIOZr74MUN2tSg9OzKD/pIK3l07Vbp/D77ldWsi23K5SITxE6nED/SYTY4Jbu3mcIWVvreu83lazI0fTz8He7C7fqRwue+sRMR7pUVqnvxmBuQe+Pz+HE9lYOruNkAXE22DlffnsilBVvOe2pXOhKHpRuEYRk/uC5A4EgBYqbWMbyfjjcIfLWdwGPwEA2X67b1c1s0Jj5fcJvYqmrKmwKq1rrWMZS4+q89ei6meqEr8vLSRyXefZ0SqkfebWEcYL3IrKvMDdEnEISLQZlG8pBL/l2U3JYMwvkCwSfcGyvsQio=
+  file: ''
+  on:
+    repo: helmibawadzir/k-9
+    tags: true
